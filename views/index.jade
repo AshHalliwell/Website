@@ -1,7 +1,10 @@
 extends ../node_modules/jade-bootstrap/layouts/starter
-append styles
-	// Custom styles for this template
-	link(href="../css/carousel.css", rel="stylesheet")
+
+head
+	meta(name='description', content='I can collect you, provide a bike and helmet and take you road or mountain biking, or take you running on the many trails around Wellington, or do a workout in my boutique gym or the greater outdoors.')
+	append styles
+		// Custom styles for this template
+		link(href="../css/carousel.css", rel="stylesheet")
 block body
 	.navbar-wrapper
 		.container
@@ -14,30 +17,38 @@ block body
 							span.icon-bar
 							span.icon-bar
 
-						a(class="navbar-brand", href="#") Adrenaline Fitness
+						a(class="navbar-brand", href="/") Adrenaline Fitness
 					#navbar.navbar-collapse.collapse
 						ul.nav.navbar-nav
 							li.active
-								a(href="#") Home
+								a(href="/") Home
 							li.dropdown
 								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
 									| Services
 									span.caret
 								ul.dropdown-menu(role='menu')
 									li
-										a(href='#') Mountain Biking
+										a(href='mountainbiking') Mountain Biking
 									li
-										a(href='#') Off Road Running
+										a(href='offroadrunning') Off Road Running
 									li
-										a(href='#') Personal Trainer
+										a(href='personaltrainer') Personal Trainer
+									li
+										a(href='roadcycling') Road Cycling
+									li
+										a(href='raceprep') Race Preparation
+									li
+										a(href='bushwalks') Bush Walks
+									li
+										a(href='triathlon') Triathlon
 							li
-								a(href="#about") About
+								a(href="about") About
 							li
-								a(href="#contact") Contact
+								a(href="contact") Contact
 
 	// Carousel
 	// ==================================================
-	+carousel("myCarousel",[{image:"../images/carousel1.jpg",h1:"Example headline",p:"Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."},{image:"../images/carousel2.jpg",h1:"Another example headline",p:"Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."},	{image:"../images/carousel3.jpg",h1:"One more for good measure.",p:"Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."}])
+	+carousel("myCarousel",[{image:"../images/carousel1.jpg",h1:"Example headline"},{image:"../images/carousel2.jpg",h1:"Example headline"},	{image:"../images/carousel3.jpg",h1:"Example Headline."}])
 	//  Marketing messaging and featurettes
 	//  ==================================================
 	// Wrap the rest of the page in another container to center all the content.
@@ -46,61 +57,32 @@ block body
 		.row
 			.col-lg-4
 				img.img-circle(src='../images/marketing1.jpg', alt='Generic placeholder image', width='140', height='140')
-				h2 Heading
+				h2 Professional Fitness
 				p
-					| Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+					| Whether you are a local Wellingtonian or a visitor to our beautiful city I can accommodate your fitness and adrenaline needs. If you are staying in a hotel I can collect you, provide a bike and helmet and take you road or mountain biking, or take you running on the many trails around Wellington, or do a workout in my boutique gym or the greater outdoors.
+
 				p
 					a.btn.btn-default(href='#', role='button') View details »
 			.col-lg-4
 				img.img-circle(src='../images/marketing2.jpg', alt='Generic placeholder image', width='140', height='140')
 				h2 Heading
 				p
-					| Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+					| If you want to reach your potential and achieve your fitness goals then I can help you do this. Whether you are an elite triathlete or want to compete your first mountainbike race I have the first hand experience and qualifications to help you achieve success.
 				p
 					a.btn.btn-default(href='#', role='button') View details »
 			.col-lg-4
 				img.img-circle(src='../images/marketing3.jpg', alt='Generic placeholder image', width='140', height='140')
-				h2 Heading
+				h2 Trails
 				p
-					| Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					| Perhaps you are a little unsure negotiating the trails by yourself? Let me help!
 				p
 					a.btn.btn-default(href='#', role='button') View details »
-		// START THE FEATURETTES
-		hr.featurette-divider
-		.row.featurette
-			.col-md-7
-				h2.featurette-heading
-					| First featurette heading.
-				p.lead
-					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-			.col-md-5
-				img.featurette-image.img-responsive.center-block(src='../images/featurette1.jpg', alt='Generic placeholder image')
-		hr.featurette-divider
-		.row.featurette
-			.col-md-7.col-md-push-5
-				h2.featurette-heading
-					| Another Heading.
-				p.lead
-					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-			.col-md-5.col-md-pull-7
-				img.featurette-image.img-responsive.center-block(src='../images/featurette2.jpg', alt='Generic placeholder image')
-		hr.featurette-divider
-		.row.featurette
-			.col-md-7
-				h2.featurette-heading
-					| And lastly, this one.
-				p.lead
-					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-			.col-md-5
-				img.featurette-image.img-responsive.center-block(src='../images/featurette3.jpg', alt='Generic placeholder image')
-		hr.featurette-divider
-		// /END THE FEATURETTES
 		// FOOTER
 		footer
 			p.pull-right
 				a(href='#') Back to top
 			p
 				| © 2016 Adrenaline Fitness ·
-				a(href='#') About
+				a(href='about') About
 				|  ·
-				a(href='#') Terms
+				a(href='contact') Contact
