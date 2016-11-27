@@ -13,10 +13,9 @@ router.get('/mountainbiking', function(req, res, next) {
        if (err) {
            return next(err);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('mountainbiking', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
@@ -26,10 +25,9 @@ router.get('/offroadrunning', function(req, res, next) {
        if (err) {
            return next(err);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('offroadrunning', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
