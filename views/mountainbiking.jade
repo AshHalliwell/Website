@@ -1,7 +1,11 @@
 extends ../node_modules/jade-bootstrap/layouts/starter
+
+append additionalMeta
+	meta(name='description', content=' Suitable for all levels of mountain bikers from beginner to advanced, all age groups and fitness levels. Learn to ride in control, have more confidence on the bike, go faster and of course have a huge amount of fun. Great for an adrenaline kick')
 append styles
 	// Custom styles for this template
 	link(href="../css/carousel.css", rel="stylesheet")
+
 block body
 	.navbar-wrapper
 		.container

@@ -1,10 +1,10 @@
 extends ../node_modules/jade-bootstrap/layouts/starter
 
-head
-	meta(name='description', content='I can collect you, provide a bike and helmet and take you road or mountain biking, or take you running on the many trails around Wellington, or do a workout in my boutique gym or the greater outdoors.')
-	append styles
-		// Custom styles for this template
-		link(href="../css/carousel.css", rel="stylesheet")
+append additionalMeta
+	meta(name='description', content="I'm Catherine Dunn and I can accommodate your adrenaline and fitness needs. I can take you road or mountain biking, or take you running on the many trails around Wellington, or do a workout in my boutique gym or the greater outdoors.")
+append styles
+	// Custom styles for this template
+	link(href="../css/carousel.css", rel="stylesheet")
 block body
 	.navbar-wrapper
 		.container
