@@ -1,0 +1,72 @@
+extends ../node_modules/jade-bootstrap/layouts/starter
+append styles
+	// Custom styles for this template
+	link(href="../css/carousel.css", rel="stylesheet")
+block body
+	.navbar-wrapper
+		.container
+			nav.navbar.navbar-inverse.navbar-static-top
+				.container
+					.navbar-header
+						button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+
+						a(class="navbar-brand", href="/") Adrenaline Fitness
+					#navbar.navbar-collapse.collapse
+						ul.nav.navbar-nav
+							li
+								a(href="/") Home
+							li.dropdown.active
+								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+									| Services
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='mountainbiking') Mountain Biking
+									li
+										a(href='offroadrunning') Off Road Running
+									li
+										a(href='personaltrainer') Personal Trainer
+									li
+										a(href='roadcycling') Road Cycling
+									li.active
+										a(href='raceprep') Race Preparation
+									li
+										a(href='bushwalks') Bush Walks
+									li
+										a(href='triathlon') Triathlon
+							li
+								a(href="about") About
+							li
+								a(href="contact") Contact
+	.container.marketing
+
+		// START THE FEATURETTES
+		hr.featurette-divider
+		.row.featurette
+			.col-md-7
+				h2.featurette-heading
+					| Race Preparation
+					hr.featurette-header-divider
+				each s in desc
+					p= s
+				h3 Cost:
+				each s in cost
+					p.cost= s
+
+			.col-md-5
+				img.featurette-image.img-responsive.center-block(src='../images/raceprep.jpg', alt='Generic placeholder image')
+		hr.featurette-divider
+		// /END THE FEATURETTES
+		// FOOTER
+		footer
+			p.pull-right
+				a(href='#') Back to top
+			p
+				| © 2016 Adrenaline Fitness ·
+				a(href='about') About
+				|  ·
+				a(href='contact') Contact
