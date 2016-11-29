@@ -82,21 +82,26 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
 
+.featurette-header-divider {
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 /* Thin out the marketing headings */
 .featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-  text-align: center;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
-.col-md-7 {
+.featurette .col-md-7 {
   padding-right: 100px;
   padding-left: 50px;
+  vertical-align: top;
 }
 
 
@@ -130,12 +135,12 @@ body {
   }
 
   .featurette-heading {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 0px;
   }
 }
