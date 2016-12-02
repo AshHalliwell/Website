@@ -113,4 +113,16 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: title });
 });
 
+router.get('/testimonials', function(req, res, next) {
+  fs.readFile('text/testimonials.txt', 'ascii', function (err, content) {
+       if (err) {
+           return next(err);
+       }
+       desc = content.split('Q:')[0].split(/\r?\n/);
+       res.render('testimonials', { title: title,
+           desc: desc
+           });
+       });
+});
+
 module.exports = router;
