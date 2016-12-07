@@ -51,16 +51,15 @@ block body
 
 		// START THE FEATURETTES
 		hr.featurette-divider
-		.row.featurette
-			.col-md-7
-				h2.featurette-heading
-					| Testimonials
-					hr.featurette-header-divider
-				each s in desc
-					p= s
-			.col-md-5
-				img.featurette-image.img-responsive.center-block(src='../images/testimonials.jpg', alt='Generic placeholder image')
-		hr.featurette-divider
+		.container.testimonials
+			img.img-circle(src='../images/marketing2.jpg', alt='Catherine Dunn', width='140', height='140')
+			h2.featurette-heading
+				| Testimonials
+				hr.featurette-header-divider
+			each s in desc
+				p= s
+				hr.featurette-header-divider
+			hr.featurette-divider
 		// /END THE FEATURETTES
 		// FOOTER
 		footer

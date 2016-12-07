@@ -77,6 +77,9 @@ body {
   margin-left: 10px;
 }
 
+.testimonials {
+  text-align: center;
+}
 
 /* Featurettes
 ------------------------- */
@@ -99,8 +102,6 @@ body {
 }
 
 .featurette .col-md-7 {
-  padding-right: 100px;
-  padding-left: 50px;
   vertical-align: top;
 }
 
@@ -142,5 +143,12 @@ body {
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 0px;
+  }
+  .testimonials{
+    width: 70%;
+  }
+  .featurette .col-md-7 {
+    padding-right: 100px;
+    padding-left: 50px;
   }
 }
