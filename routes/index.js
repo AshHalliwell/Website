@@ -75,10 +75,9 @@ router.get('/bushwalks', function(req, res, next) {
        if (err) {
            return next(err);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('bushwalks', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
@@ -88,13 +87,13 @@ router.get('/triathlon', function(req, res, next) {
        if (err) {
            return next(err);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('triathlon', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
+
 
 router.get('/about', function(req, res, next) {
   fs.readFile('text/about.txt', 'ascii', function (err, content) {
