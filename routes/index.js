@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/mountainbiking', function(req, res, next) {
   fs.readFile('text/mountainbiking.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split(/\r?\n/);
        res.render('mountainbiking', { title: title,
@@ -23,7 +23,7 @@ router.get('/mountainbiking', function(req, res, next) {
 router.get('/offroadrunning', function(req, res, next) {
   fs.readFile('text/offroadrunning.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split(/\r?\n/);
        res.render('offroadrunning', { title: title,
@@ -35,7 +35,7 @@ router.get('/offroadrunning', function(req, res, next) {
 router.get('/personaltrainer', function(req, res, next) {
   fs.readFile('text/personaltraining.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split('Costs:')[0].split(/\r?\n/);
        res.render('personaltrainer', { title: title,
@@ -47,7 +47,7 @@ router.get('/personaltrainer', function(req, res, next) {
 router.get('/roadcycling', function(req, res, next) {
   fs.readFile('text/roadcycling.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split('Costs:')[0].split(/\r?\n/);
        cost = content.split('Costs:')[1].split(/\r?\n/);
@@ -60,7 +60,7 @@ router.get('/roadcycling', function(req, res, next) {
 router.get('/raceprep', function(req, res, next) {
   fs.readFile('text/raceprep.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split('Costs:')[0].split(/\r?\n/);
        cost = content.split('Costs:')[1].split(/\r?\n/);
@@ -73,7 +73,7 @@ router.get('/raceprep', function(req, res, next) {
 router.get('/bushwalks', function(req, res, next) {
   fs.readFile('text/bushwalks.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split(/\r?\n/);
        res.render('bushwalks', { title: title,
@@ -85,7 +85,7 @@ router.get('/bushwalks', function(req, res, next) {
 router.get('/triathlon', function(req, res, next) {
   fs.readFile('text/triathlon.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split(/\r?\n/);
        res.render('triathlon', { title: title,
@@ -98,7 +98,7 @@ router.get('/triathlon', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   fs.readFile('text/about.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        personal = content.split('Q:')[0].split(/\r?\n/);
        qual = content.split('Q:')[1].split(/\r?\n/);
@@ -115,13 +115,17 @@ router.get('/contact', function(req, res, next) {
 router.get('/testimonials', function(req, res, next) {
   fs.readFile('text/testimonials.txt', 'ascii', function (err, content) {
        if (err) {
-           return next(err);
+           res.render('pagenotfound', 404);
        }
        desc = content.split('Q:')[0].split(/\r?\n/);
        res.render('testimonials', { title: title,
            desc: desc
            });
        });
+});
+
+router.get('*', function(req, res){
+  res.render('pagenotfound', 404);
 });
 
 module.exports = router;
