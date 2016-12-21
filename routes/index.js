@@ -37,7 +37,7 @@ router.get('/personaltrainer', function(req, res, next) {
        if (err) {
            res.render('pagenotfound', 404);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('personaltrainer', { title: title,
            desc: desc
            });
@@ -49,10 +49,9 @@ router.get('/roadcycling', function(req, res, next) {
        if (err) {
            res.render('pagenotfound', 404);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('roadcycling', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
@@ -62,10 +61,9 @@ router.get('/raceprep', function(req, res, next) {
        if (err) {
            res.render('pagenotfound', 404);
        }
-       desc = content.split('Costs:')[0].split(/\r?\n/);
-       cost = content.split('Costs:')[1].split(/\r?\n/);
+       desc = content.split(/\r?\n/);
        res.render('raceprep', { title: title,
-           desc: desc, cost: cost
+           desc: desc
            });
        });
 });
